@@ -1,0 +1,35 @@
+/* Random Number Guessing Game using java*/
+
+import java.util.*;
+import java.util.Random;
+public class NumberGuessing{
+    
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    Random rand=new Random();
+	    int rand_no=rand.nextInt(100) + 1;
+	    int guess;
+	    int chance=8;
+	    System.out.println("********Welcome Number Guessing Game*********");
+	    System.out.println("Guess the number between 1 to 100, you have only 8 chances");
+	    
+	    for(int i=1;i<=chance;i++){
+	        System.out.println("Enter your guess:"+ i );
+	        guess=sc.nextInt();
+	        
+	        if(guess==rand_no){
+	            System.out.println("congratulations...you guessing the correct number");
+	        }
+	        else if(guess>rand_no){
+	            System.out.print("too small");
+	        }
+	        else{
+	            System.out.println("too large");
+	        }
+	        
+	    }
+	    System.out.println("soory ,you use all 8 chances");
+	    System.out.println("the guessing number is"+rand_no);
+	}
+}
+

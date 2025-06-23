@@ -24,7 +24,7 @@ class Student {
         }
         
         if (isfail) {
-            System.out.println("Student is FAIL in one or more subjects. Cannot calculate percentage.");
+            System.out.println("Student is fail in one or more subjects.Cannot calculate percentage.");
         } else {
             double average = (double) sum / sub_no;
             double percentage = ((double) sum / (sub_no * 100)) * 100;

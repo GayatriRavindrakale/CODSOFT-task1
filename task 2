@@ -1,1 +1,67 @@
+/* ....STUDENTS GRADE CALCULATOR.... */
 
+
+import java.util.*;
+class Student {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter total number of subjects:");
+        int sub_no = sc.nextInt();
+        int[] arr = new int[sub_no];
+        
+        int sum = 0;
+        boolean isfail = false;
+        
+        System.out.println("Enter marks of each subject:");
+        for (int i = 0; i < sub_no; i++) {
+            System.out.print("Enter marks of subject " + (i + 1) + ": ");
+            arr[i] = sc.nextInt();
+            if (arr[i] < 35) {
+                isfail = true;
+            }
+            sum += arr[i];
+        }
+        
+        if (isfail) {
+            System.out.println("Student is FAIL in one or more subjects. Cannot calculate percentage.");
+        } else {
+            double average = (double) sum / sub_no;
+            double percentage = ((double) sum / (sub_no * 100)) * 100;
+
+            System.out.println("\n------Student Report-----");
+            System.out.println("Total marks obtained: " + sum + " out of " + (sub_no * 100));
+            System.out.println("Average marks: " + average);
+            System.out.println("Percentage: " + percentage + "%");
+
+            if (percentage >= 90) {
+                System.out.println("Student has an A Grade.");
+            } else if (percentage >= 75) {
+                System.out.println("Student has a B Grade.");
+            } else if (percentage >= 35) {
+                System.out.println("Student has a C Grade.");
+            } else {
+                System.out.println("Student has Failed. Please reappear.");
+            }
+        }
+
+        sc.close(); 
+    }
+}
+
+output:-
+Enter total number of subjects:
+6
+Enter marks of each subject:
+Enter marks of subject 1: 99
+Enter marks of subject 2: 98
+Enter marks of subject 3: 97
+Enter marks of subject 4: 95
+Enter marks of subject 5: 92
+Enter marks of subject 6: 97
+
+------Student Report-----
+Total marks obtained: 578 out of 600
+Average marks: 96.33333333333333
+Percentage: 96.33333333333334%
+Student has an A Grade.
